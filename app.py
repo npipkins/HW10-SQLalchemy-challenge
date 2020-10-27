@@ -8,7 +8,7 @@ from sqlalchemy import create_engine, func, distinct
 from flask import Flask, jsonify
 
 
-engine = create_engine("sqlite:///Resources/hawaii.sqlite", connect_args={'check_same_thread': False})
+engine = create_engine("sqlite:///Resources/hawaii.sqlite")
 
 Base = automap_base()
 
@@ -26,7 +26,7 @@ app = Flask(__name__)
 @app.route("/")
 def home():
     return (
-        f"Welcome to my climate data API!<br/>"
+        f"Welcome!<br/>"
         f"Available Routes:<br/>"
         f"/api/v1.0/precipitation<br/>"
         f"/api/v1.0/stations<br/>"
